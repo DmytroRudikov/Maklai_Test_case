@@ -12,7 +12,6 @@ def paraphrase_tree(tree: str, limit: int = 20) -> JSONResponse:
     list_of_options = rephrase.rephrase()
     if len(list_of_options) > limit:
         content = jsonable_encoder({"paraphrases": list_of_options[:limit]})
-        return JSONResponse(content=content)
     else:
         content = jsonable_encoder({"paraphrases": list_of_options})
-        return JSONResponse(content=content)
+    return JSONResponse(content=content)
